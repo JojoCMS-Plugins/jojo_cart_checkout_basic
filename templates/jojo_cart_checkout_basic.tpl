@@ -1,4 +1,5 @@
 <div class="jojo_cart">
+{if $pg_body}{$pg_body}{/if}
 {include file="jojo_cart_test_mode.tpl"}
 
 {if $errors}
