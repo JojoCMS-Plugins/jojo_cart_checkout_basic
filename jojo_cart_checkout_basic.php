@@ -27,6 +27,8 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
         $testmode = call_user_func(array(Jojo_Cart_Class, 'isTestMode'));
         $smarty->assign('token', $cart->token);
 
+        Jojo::runHook('jojo_cart_update:top');
+
         /* Build list of countries for UI */
         $countries = array();
         $countries[] = array('code' => '', 'name' => 'Select country');
@@ -49,7 +51,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
             $cart->fields['shipping_postcode']  = '1234';
             $cart->fields['shipping_country']   = 'NZ';
         }
-        
+
         /* Pre populate a logged in user's details */
         if (!empty($_USERID) && !count($cart->fields)) {
             $user = Jojo::selectRow("SELECT userid, us_firstname, us_lastname, us_email FROM {user} WHERE userid = ? LIMIT 1", array($_USERID));
@@ -59,7 +61,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
                 $cart->fields['shipping_email']      = $user['us_email'];
             }
         }
-        
+
         /* filter to allow modification of fields data - such as auto-population of certain fields */
         $cart->fields = Jojo::applyFilter('jojo_cart_checkout:populate_fields', $cart->fields);
 
@@ -81,7 +83,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
         foreach($fields as $name) {
             $cart->fields[$name] = Jojo::getFormData($name, false);
         }
-        
+
         call_user_func(array(Jojo_Cart_Class, 'saveCart'));
 
         /* Check for required fields */
