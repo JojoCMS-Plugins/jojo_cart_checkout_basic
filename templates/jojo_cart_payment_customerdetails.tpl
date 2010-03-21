@@ -2,6 +2,7 @@
 
 <strong>Shipping Address</strong><br/>
 {$fields.shipping_firstname} {$fields.shipping_lastname} {if $fields.shipping_email}&lt;{$fields.shipping_email}&gt;{/if}<br />
+{if $fields.shipping_phone}{$fields.shipping_phone}<br/>{/if}
 {if $fields.shipping_address1}{$fields.shipping_address1}<br/>{/if}
 {if $fields.shipping_address2}{$fields.shipping_address2}<br/>{/if}
 {if $fields.shipping_suburb}{$fields.shipping_suburb}<br/>{/if}

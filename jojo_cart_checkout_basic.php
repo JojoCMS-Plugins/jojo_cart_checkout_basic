@@ -77,7 +77,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
 
         /* Get form values */
         $fields = array('shipping_email', 'shipping_firstname',
-            'shipping_lastname', 'shipping_email', 'shipping_address1',
+            'shipping_lastname', 'shipping_email', 'shipping_phone', 'shipping_address1',
             'shipping_address2', 'shipping_suburb', 'shipping_city',
             'shipping_state', 'shipping_postcode', 'shipping_country');
         foreach($fields as $name) {
@@ -96,6 +96,11 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
             'shipping_postcode'  => 'Please enter your post code.',
             'shipping_country'   => 'Please select your country.',
         );
+        
+        if (Jojo::getOption('cart_phone_required', 'no') == 'yes') {
+            $requiredFields['shipping_phone'] = 'Please enter your phone number.';
+        }
+        
         $errors = array();
         foreach($requiredFields as $name => $errorMsg) {
             if (!$cart->fields[$name]) {

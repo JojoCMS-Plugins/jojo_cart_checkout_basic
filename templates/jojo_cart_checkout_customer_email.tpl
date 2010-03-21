@@ -3,7 +3,8 @@ Customer Details
 ================
 Shipping Address
   {$fields.shipping_firstname} {$fields.shipping_lastname} {if $fields.shipping_email}<{$fields.shipping_email}>{/if}
-
+{if $fields.shipping_phone}  {$fields.shipping_phone}
+{/if}
 {if $fields.shipping_address1}  {$fields.shipping_address1}
 {/if}
 {if $fields.shipping_address2}  {$fields.shipping_address2}
