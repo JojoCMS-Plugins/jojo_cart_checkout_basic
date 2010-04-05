@@ -9,5 +9,5 @@
 {if $fields.shipping_city}{$fields.shipping_city}<br/>{/if}
 {if $fields.shipping_state}{$fields.shipping_state}{/if} {$fields.shipping_postcode}<br/>
 {section name=c loop=$countries}{if $countries[c].code|strtoupper==$fields.shipping_country}{$countries[c].name}{/if}{/section}
-
+{if $fields.shipping_special}<br/>Special instructions: {$fields.shipping_special}{/if}
 <br style="clear: both"/>

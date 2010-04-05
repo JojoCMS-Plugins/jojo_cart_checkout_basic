@@ -67,6 +67,10 @@
         <input type="text" size="10" name="shipping_postcode" id="shipping_postcode" value="{$fields.shipping_postcode}" /> *<br />
 {if $errors.shipping_postcode}<span class="error">{$errors.shipping_postcode}</span><br/>{/if}
 
+{if $OPTIONS.cart_special == 'yes'}<label for="shipping_special">Special Instructions</label>
+            <textarea rows="4" cols="40" name="shipping_special" id="shipping_special">{$fields.shipping_special}</textarea><br />
+{if $errors.shipping_special}<span class="error">{$errors.shipping_special}</span><br/>{/if}{/if}
+
 {jojoHook hook="jojo_cart_extra_fields"}
         <br style="clear: both"/>
         <input type="submit" name="continue" value="Continue"/>

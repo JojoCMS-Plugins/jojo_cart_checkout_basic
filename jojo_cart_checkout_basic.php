@@ -50,6 +50,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
             $cart->fields['shipping_city']      = 'Testville';
             $cart->fields['shipping_postcode']  = '1234';
             $cart->fields['shipping_country']   = 'NZ';
+            $cart->fields['shipping_special']   = '';
         }
 
         /* Pre populate a logged in user's details */
@@ -79,7 +80,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
         $fields = array('shipping_email', 'shipping_firstname',
             'shipping_lastname', 'shipping_email', 'shipping_phone', 'shipping_address1',
             'shipping_address2', 'shipping_suburb', 'shipping_city',
-            'shipping_state', 'shipping_postcode', 'shipping_country');
+            'shipping_state', 'shipping_postcode', 'shipping_country', 'shipping_special');
         foreach($fields as $name) {
             $cart->fields[$name] = Jojo::getFormData($name, false);
         }

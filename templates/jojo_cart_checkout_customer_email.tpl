@@ -18,3 +18,4 @@ Shipping Address
 {if $fields.shipping_postcode}  {$fields.shipping_postcode}
 {/if}
 {section name=c loop=$countries}{if $countries[c].code|strtoupper==$fields.shipping_country}  {$countries[c].name}{/if}{/section}
+{if $fields.shipping_special}Special instructions: {$fields.shipping_special}{/if}
