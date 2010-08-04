@@ -20,19 +20,19 @@
         <h3>Shipping Address</h3>
 
         <label for="shipping_firstname">First name</label>
-        <input type="text" size="20" name="shipping_firstname" id="shipping_firstname" value="{$fields.shipping_firstname}" /> *<br />
+        <input type="text" size="20" name="shipping_firstname" maxlength="20" id="shipping_firstname" value="{$fields.shipping_firstname}" /> *<br />
 {if $errors.shipping_firstname}<span class="error">{$errors.shipping_firstname}</span><br/>{/if}
 
         <label for="shipping_lastname">Last name</label>
-        <input type="text" size="20" name="shipping_lastname" id="shipping_lastname" value="{$fields.shipping_lastname}" /> *<br />
+        <input type="text" size="20" name="shipping_lastname" maxlength="20" id="shipping_lastname" value="{$fields.shipping_lastname}" /> *<br />
 {if $errors.shipping_lastname}<span class="error">{$errors.shipping_lastname}</span><br/>{/if}
 
         <label for="shipping_email">Email</label>
-        <input type="text" size="30" name="shipping_email" id="shipping_email" value="{$fields.shipping_email}" /> *<br />
+        <input type="text" size="30" name="shipping_email" maxlength="85" id="shipping_email" value="{$fields.shipping_email}" /> *<br />
 {if $errors.shipping_email}<span class="error">{$errors.shipping_email}</span><br/>{/if}
 
         <label for="shipping_phone">Phone</label>
-        <input type="text" size="20" name="shipping_phone" id="shipping_phone" value="{if $fields.shipping_phone}{$fields.shipping_phone}{/if}" />{if $OPTIONS.cart_phone_required=='yes'} *{/if}<br />
+        <input type="text" size="20" name="shipping_phone" maxlength="25" id="shipping_phone" value="{if $fields.shipping_phone}{$fields.shipping_phone}{/if}" />{if $OPTIONS.cart_phone_required=='yes'} *{/if}<br />
 {if $errors.shipping_phone}<span class="error">{$errors.shipping_phone}</span><br/>{/if}
 
         <label for="shipping_country">Country</label>
@@ -44,23 +44,23 @@
 {if $errors.shipping_country}<span class="error">{$errors.shipping_country}</span><br/>{/if}
 
         <label for="shipping_state">State</label>
-        <input type="text" size="20" name="shipping_state" id="shipping_state" value="{$fields.shipping_state}" /><br />
+        <input type="text" size="20" name="shipping_state" maxlength="35" id="shipping_state" value="{$fields.shipping_state}" /><br />
 {if $errors.shipping_state}<span class="error">{$errors.shipping_state}</span><br/>{/if}
 
         <label for="shipping_address1">Address 1</label>
-        <input type="text" size="30" name="shipping_address1" id="shipping_address1" value="{$fields.shipping_address1}" /> *<br />
+        <input type="text" size="30" name="shipping_address1" maxlength="35" id="shipping_address1" value="{$fields.shipping_address1}" /> *<br />
 {if $errors.shipping_address1}<span class="error">{$errors.shipping_address1}</span><br/>{/if}
 
         <label for="shipping_address2">Address 2</label>
-        <input type="text" size="30" name="shipping_address2" id="shipping_address2" value="{$fields.shipping_address2}" /><br />
+        <input type="text" size="30" name="shipping_address2" maxlength="35" id="shipping_address2" value="{$fields.shipping_address2}" /><br />
 {if $errors.shipping_address2}<span class="error">{$errors.shipping_address2}</span><br/>{/if}
 
         <label for="shipping_suburb">Suburb</label>
-        <input type="text" size="20" name="shipping_suburb" id="shipping_suburb" value="{$fields.shipping_suburb}" /><br />
+        <input type="text" size="20" name="shipping_suburb" maxlength="35" id="shipping_suburb" value="{$fields.shipping_suburb}" /><br />
 {if $errors.shipping_suburb}<span class="error">{$errors.shipping_suburb}</span><br/>{/if}
 
         <label for="shipping_city">City</label>
-        <input type="text" size="20" name="shipping_city" id="shipping_city" value="{$fields.shipping_city}" /> *<br />
+        <input type="text" size="20" name="shipping_city" maxlength="35" id="shipping_city" value="{$fields.shipping_city}" /> *<br />
 {if $errors.shipping_city}<span class="error">{$errors.shipping_city}</span><br/>{/if}
 
         <label for="shipping_postcode">Postcode</label>

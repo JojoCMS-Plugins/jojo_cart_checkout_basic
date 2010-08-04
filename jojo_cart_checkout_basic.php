@@ -97,11 +97,11 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
             'shipping_postcode'  => 'Please enter your post code.',
             'shipping_country'   => 'Please select your country.',
         );
-        
+
         if (Jojo::getOption('cart_phone_required', 'no') == 'yes') {
             $requiredFields['shipping_phone'] = 'Please enter your phone number.';
         }
-        
+
         $errors = array();
         foreach($requiredFields as $name => $errorMsg) {
             if (!$cart->fields[$name]) {
@@ -111,6 +111,10 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
         if (!empty($cart->fields['shipping_email']) && !Jojo::checkEmailFormat($cart->fields['shipping_email'])) {
             $errors['shipping_email'] = 'Please enter a valid email address.';
         }
+
+        $name= $cart->fields['shipping_firstname'].' '.$cart->fields['shipping_lastname'];
+        if(strlen($name)>35) $errors[] = 'Please a firstname/lastname combination with max 35 characters please';
+
 
         if (count($errors)) {
             /* There were errors, let the user fix them */
