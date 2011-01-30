@@ -101,7 +101,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
         if (Jojo::getOption('cart_phone_required', 'no') == 'yes') {
             $requiredFields['shipping_phone'] = 'Please enter your phone number.';
         }
-
+        $requiredFields = Jojo::applyFilter('jojo_cart_checkout:required_fields', $requiredFields);
         $errors = array();
         foreach($requiredFields as $name => $errorMsg) {
             if (!$cart->fields[$name]) {
