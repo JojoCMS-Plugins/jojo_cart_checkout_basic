@@ -71,7 +71,9 @@
             <textarea rows="4" cols="40" name="shipping_special" id="shipping_special">{$fields.shipping_special}</textarea><br />
 {if $errors.shipping_special}<span class="error">{$errors.shipping_special}</span><br/>{/if}{/if}
 
-{jojoHook hook="jojo_cart_extra_fields"}
+{jojoHook hook="jojo_cart_extra_fields"}{* deprecated: please use the shipping / billing hooks instead *}
+{jojoHook hook="jojo_cart_extra_fields_shipping"}
+{jojoHook hook="jojo_cart_extra_fields_billing"}
         <br style="clear: both"/>
         <input type="submit" name="continue" value="Continue"/>
     </div>
