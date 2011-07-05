@@ -81,6 +81,7 @@ class jojo_plugin_Jojo_cart_checkout_basic extends JOJO_Plugin
             'shipping_lastname', 'shipping_email', 'shipping_phone', 'shipping_address1',
             'shipping_address2', 'shipping_suburb', 'shipping_city',
             'shipping_state', 'shipping_postcode', 'shipping_country', 'shipping_special');
+        $fields = Jojo::applyFilter('jojo_cart_checkout:get_fields', $fields);
         foreach($fields as $name) {
             $cart->fields[$name] = Jojo::getFormData($name, false);
         }
